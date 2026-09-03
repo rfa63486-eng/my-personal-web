@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshMart - Solusi Kasir & Manajemen Bisnis</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* Custom Keyframe untuk Efek Floating/Melayang */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+
+  <!-- Header / Navigation -->
+  <header class="bg-emerald-700 text-white sticky top-0 z-50 shadow-md transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2 transform hover:scale-105 transition-transform duration-300">
+        <i class="fa-solid fa-basket-shopping text-2xl animate-bounce"></i>
+        <span class="text-xl font-bold tracking-wide">FreshMart</span>
+      </div>
+      <nav class="hidden md:flex space-x-6 font-medium">
+        <a href="#fitur" class="hover:text-emerald-200 transition-colors duration-200">Fitur</a>
+        <a href="#keunggulan" class="hover:text-emerald-200 transition-colors duration-200">Keunggulan</a>
+      </nav>
+      <div class="flex items-center space-x-3">
+        <a href="../KASIR/kasir.html" class="bg-emerald-800 hover:bg-emerald-900 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-white">
+          <i class="fa-solid fa-cash-register mr-1"></i> Mode Kasir
+        </a>
+        <a href="../ADMINISTRATOR/adm.html" class="bg-white text-emerald-700 hover:bg-emerald-100 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+          <i class="fa-solid fa-user-shield mr-1"></i> Admin Panel
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-emerald-700 text-white py-20 px-4 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+      <div class="inline-block bg-emerald-800/60 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide text-emerald-200 mb-2 border border-emerald-500/30 animate-pulse">
+        ⚡ Solusi Kasir Retail & Minimarket Modern
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        Kelola Bisnis <span class="text-emerald-300 underline decoration-emerald-400">FreshMart</span> Lebih Mudah & Akurat
+      </h1>
+      <p class="text-lg md:text-xl text-emerald-100 max-w-3xl mx-auto font-light leading-relaxed">
+        Sistem kasir pintar FreshMart untuk pencatatan transaksi, kelola stok, laporan real-time, hingga manajemen pelanggan dalam satu platform.
+      </p>
+      <div class="pt-4 flex justify-center gap-4" data-aos="zoom-in" data-aos-delay="300">
+        <a href="#fitur" class="bg-white text-emerald-700 px-8 py-3.5 rounded-xl font-bold shadow-xl hover:bg-emerald-50 hover:shadow-emerald-900/20 transform hover:-translate-y-1 transition-all duration-300">
+          Jelajahi Fitur <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keunggulan Section -->
+  <section id="keunggulan" class="py-20 px-4 max-w-7xl mx-auto">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-gray-900">Mengapa Memilih FreshMart?</h2>
+      <p class="text-gray-600 mt-2">Keunggulan utama untuk mempercepat pertumbuhan bisnis Anda</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl animate-float">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 mb-2">Pelayanan Profesional</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Proses transaksi cepat tanpa antrean panjang.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl animate-float">
+          <i class="fa-solid fa-wallet"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 mb-2">Fleksibilitas Bayar</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Mendukung berbagai opsi pembayaran modern.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl animate-float">
+          <i class="fa-solid fa-boxes-stacked"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 mb-2">Kepastian Stok & Harga</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Data inventaris dan harga selalu terintegrasi.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl animate-float">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 mb-2">Cegah Kebocoran Dana</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Transparansi penuh untuk mencegah korupsi internal.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl animate-float">
+          <i class="fa-solid fa-face-smile"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 mb-2">Kepercayaan Pelanggan</h3>
+        <p class="text-xs text-gray-500 leading-relaxed">Struk jelas dan akurat tingkatkan kepuasan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitur Section -->
+  <section id="fitur" class="py-20 bg-emerald-50/50 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-gray-900">Fitur Unggulan Sistem</h2>
+        <p class="text-gray-600 mt-2">Dukungan fitur lengkap untuk operasional harian hingga level manajerial</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Fitur Cards dengan Effect Hover Scale -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-receipt text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Pencatatan Penjualan</h3>
+          <p class="text-sm text-gray-500">Input transaksi instan dengan dukungan pemindai kode barang dan integrasi kasir.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-box-open text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Produk & Jasa</h3>
+          <p class="text-sm text-gray-500">Atur kategori, varian, hingga jenis layanan item dengan fleksibel.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-warehouse text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Manajemen Stok</h3>
+          <p class="text-sm text-gray-500">Pantau barang masuk/keluar secara real-time lengkap dengan notifikasi stok tipis.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-users text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Manajemen Pelanggan</h3>
+          <p class="text-sm text-gray-500">Simpan riwayat belanja pelanggan untuk program loyalitas dan promosi.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <i class="fa-solid fa-chart-line text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Laporan Penjualan</h3>
+          <p class="text-sm text-gray-500">Laporan terintegrasi secara harian, mingguan, bulanan, hingga tahunan.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-user-gear text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Manajemen Pengguna</h3>
+          <p class="text-sm text-gray-500">Hak akses bertingkat yang disesuaikan untuk Admin, Kasir, dan Manajer.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+          <i class="fa-solid fa-print text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Struk Cetak & Digital</h3>
+          <p class="text-sm text-gray-500">Cetak struk fisik via thermal printer atau kirim struk digital (WhatsApp/Email).</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+          <i class="fa-solid fa-qrcode text-3xl text-emerald-600 mb-4 group-hover:scale-110 transition-transform duration-300 block"></i>
+          <h3 class="font-bold text-lg mb-2 text-gray-800">Multi Pembayaran</h3>
+          <p class="text-sm text-gray-500">Menerima pembayaran Tunai, Transfer Bank, QRIS, hingga berbagai e-Wallet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-8 px-4 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm gap-4">
+      <p>&copy; 2026 FreshMart System. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="landingpage.html" class="hover:text-emerald-400 transition-colors">Landing Page</a>
+        <a href="../ADMINISTRATOR/adm.html" class="hover:text-emerald-400 transition-colors">Admin Panel</a>
+        <a href="../KASIR/kasir.html" class="hover:text-emerald-400 transition-colors">Kasir</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS (Animate On Scroll) JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Inisialisasi Animasi saat Halaman Ditinggalkan (Scroll)
+    AOS.init({
+      once: true, // Animasi hanya berjalan 1 kali saat di-scroll
+      duration: 800, // Durasi animasi (ms)
+      easing: 'ease-out-cubic'
+    });
+  </script>
+</body>
+</html>  

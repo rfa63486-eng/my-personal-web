@@ -1,0 +1,109 @@
+/* Custom Scrollbar untuk Panel Kasir */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+/* Container Utama Navbar */
+.navbar {
+  background-color: #006644; /* Warna hijau navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Kiri: Tombol Bubble */
+.nav-left .btn-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #004d33; /* Warna bubble lebih gelap */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 12px; /* Membuat sudut tumpul (bubble) */
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.nav-left .btn-bubble:hover {
+  background-color: #003322; /* Efek hover saat ditunjuk mouse */
+}
+
+/* Kanan: Branding */
+.nav-right .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.icon, .brand-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* Container Utama Navbar */
+.navbar {
+  background-color: #006644; /* Warna hijau navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Kiri: Tombol Bubble */
+.nav-left .btn-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #004d33; /* Warna bubble lebih gelap */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 12px; /* Membuat sudut tumpul (bubble) */
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.nav-left .btn-bubble:hover {
+  background-color: #003322; /* Efek hover saat ditunjuk mouse */
+}
+
+/* Kanan: Branding */
+.nav-right .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.icon, .brand-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+}

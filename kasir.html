@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMart - Panel Kasir</title>
+
+    <a href="../ADMINISTRATOR/adm.html">Panel Administrator</a>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- External CSS khusus Kasir -->
+    <link rel="stylesheet" href="kasir.css">
+</head>
+<body class="bg-slate-100 font-sans h-screen flex flex-col overflow-hidden">
+
+    <!-- Header Panel -->
+    <header class="bg-emerald-700 text-white px-6 py-3.5 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-4">
+            <a href="../USER/landingpage.html" class="bg-emerald-800 hover:bg-emerald-900 p-2 rounded-lg text-xs font-semibold flex items-center gap-1 transition">
+                <i data-feather="arrow-left" class="w-4 h-4"></i> Landing Page
+            </a>
+            <h1 class="text-xl font-black tracking-wide flex items-center gap-2">
+                <i data-feather="shopping-bag" class="w-6 h-6"></i>
+                FreshMart
+            </h1>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+            <span class="bg-emerald-800 px-3 py-1 rounded-full text-xs font-medium">Kasir: <strong>Muhammad Rafa Albani</strong></span>
+            <span id="liveClock" class="font-mono text-emerald-200 text-xs">00:00:00</span>
+        </div>
+    </header>
+
+    <!-- Main POS Layout -->
+    <div class="flex-1 flex overflow-hidden p-4 gap-4">
+        
+        <!-- KIRI: Katalog Produk -->
+        <div class="w-7/12 bg-white rounded-2xl shadow-sm border border-slate-200 p-4 flex flex-col">
+            <!-- Filter & Search -->
+            <div class="flex gap-3 mb-4">
+                <div class="relative flex-1">
+                    <i data-feather="search" class="absolute left-3 top-2.5 w-4 h-4 text-slate-400"></i>
+                    <input type="text" id="searchBox" onkeyup="filterProduk()" placeholder="Cari barang atau scan barcode..." 
+                           class="w-full pl-9 pr-4 py-2 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <select id="categoryFilter" onchange="filterProduk()" class="border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    <option value="all">Semua Kategori</option>
+                    <option value="Buah">Buah</option>
+                    <option value="Sayur">Sayur</option>
+                    <option value="Sembako">Sembako</option>
+                    <option value="Minuman">Minuman</option>
+                </select>
+            </div>
+
+            <!-- Grid Produk -->
+            <div id="gridProduk" class="grid grid-cols-3 gap-3 overflow-y-auto flex-1 pr-1">
+                <!-- Card Produk Di-render via JS -->
+            </div>
+        </div>
+
+        <!-- KANAN: Keranjang & Pembayaran -->
+        <div class="w-5/12 bg-white rounded-2xl shadow-sm border border-slate-200 p-4 flex flex-col justify-between">
+            <div>
+                <div class="flex justify-between items-center mb-3 pb-2 border-b border-slate-100">
+                    <h2 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                        <i data-feather="shopping-cart" class="w-5 h-5 text-emerald-600"></i> Detail Transaksi
+                    </h2>
+                    <button onclick="resetKeranjang()" class="text-xs text-red-500 hover:text-red-700 font-semibold">Kosongkan</button>
+                </div>
+                
+                <!-- Tabel Item -->
+                <div class="overflow-y-auto max-h-[320px] mb-4">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-slate-50 border-b border-slate-100 text-slate-500">
+                            <tr>
+                                <th class="py-2 px-1">Item</th>
+                                <th class="py-2 text-center">Qty</th>
+                                <th class="py-2 text-right">Subtotal</th>
+                                <th class="py-2 text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelKeranjang">
+                            <!-- Items dimasukkan lewat JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Ringkasan & Pembayaran -->
+            <div class="border-t border-slate-100 pt-3 space-y-3">
+                <div class="bg-slate-50 p-3 rounded-xl space-y-1.5">
+                    <div class="flex justify-between text-slate-500 text-xs">
+                        <span>Subtotal:</span>
+                        <span id="subtotalHarga">Rp 0</span>
+                    </div>
+                    <div class="flex justify-between text-lg font-black text-slate-900 pt-1 border-t border-slate-200">
+                        <span>Total:</span>
+                        <span id="totalHarga" class="text-emerald-600">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs">
+                        <label for="bayar" class="text-slate-600 font-medium">Uang Bayar (Rp):</label>
+                        <input type="number" id="bayar" oninput="hitungKembalian()" placeholder="0" 
+                               class="w-36 px-3 py-1.5 border border-slate-200 rounded-lg text-right font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                    <div class="flex justify-between text-xs font-semibold">
+                        <span class="text-slate-600">Kembalian:</span>
+                        <span id="kembalian" class="text-slate-800">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                    <button onclick="resetKeranjang()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 rounded-xl text-xs transition">
+                        Batal
+                    </button>
+                    <button onclick="prosesBayar()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs shadow-md shadow-emerald-600/30 transition">
+                        Bayar & Cetak
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JS Kasir -->
+    <script src="kasir.js"></script>
+</body>
+</html>
